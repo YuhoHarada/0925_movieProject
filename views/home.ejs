@@ -61,7 +61,7 @@
                 <% } %> 
             <% } %>
             <% if(movie.page != movie.total_pages && movie.total_pages != 0){ %>
-                <a href="/<%= url %>/<%= movie.page + 1 %>" class="pagenum">&gt;</a>
+                <a href="/<%= url %>/<%= Number(movie.page) + 1 %>" class="pagenum">&gt;</a>
                 <a href="/<%= url %>/<%= movie.total_pages %>" class="pagenum">&gt;&gt;</a>
             <% } %> 
         </section>

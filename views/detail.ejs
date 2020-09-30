@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Detail</title>
+</head>
+<body>
+    <%- include('./_header.ejs') %>
+    <main id="detail">
+        <% if (detail.poster_path != null) { %>
+            <img src="https://image.tmdb.org/t/p/original/<%= detail.poster_path %>" alt="">
+        <% } else { %>
+             <img src="/noimage.png" alt="" style="object-fit: contain;">
+        <% } %>
+        <div class="inhalt">
+            <div class="vote">
+                <div class="star">&#9733;</div>
+                <h3><span><%= detail.vote_average %></span> /10</h3>
+                <p><%= detail.popularity %> </p>
+            </div>
+            <% if (favorite) { %>
+                <a href="/delete/<%= deleteid %>"><span>-</span> Remove from favorite</a><br>
+            <% } else { %>
+                <a href="/add/<%= detail.id %>"><span>+</span> Add to favorite</a><br>
+            <% } %>
+            <h1><%= detail.title %></h1>
+            <p><%= detail.release_date %> Released</p>
+            <div class="genre">
+                <% detail.genres.forEach(elt => { %>
+                    <h3><%= elt.name %></h3>
+                <% }); %> 
+            </div>
+            <h2>Plot Summary</h2>
+            <p><%= detail.overview %> </p>
+        </div>
+    </main>
+    <script src="/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #333;
+    color: white;
+}
+
+/* ********************* ALL ********************* */
+img{
+    width: 100%;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    transition: .5s;
+}
+a:hover{
+    opacity: .7;
+}
+p{
+    line-height: 1.5em;
+}
+main>h1{
+    text-align: center;
+    padding: 50px 0 0;
+}
+/* *********** header *********** */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5vw;
+    background: #4f4f4f;
+}
+header h1{
+    font-weight: 400;
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+header form input{
+    background: gray;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: 30vw;
+}
+header form input[type=submit]{
+    background: white;
+    color: #333;
+    width: auto;
+}
+
+/* ********************* movieList ********************* */
+.movielist{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1vw;
+    row-gap: 80px;
+    padding: 50px 5vw 100px;
+}
+.movielist .item{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.movielist .item:hover{
+    opacity: .7;
+}
+.movielist .item a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.movielist .item img{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.movielist .item h2{
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* *********** pageList *********** */
+.pagelist{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50vh;
+}
+.pagenum{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    color: gray;
+    margin: 2px;
+    border-radius: 4px;
+}
+.pagenum.activ{
+    background: skyblue;
+}
+
+/* ********************* detail ********************* */
+#detail img{
+    height: 70vh;
+    object-fit: cover;
+    object-position: center 20%;
+}
+#detail .inhalt{
+    padding: 30px 5vw 300px;
+    position: relative;
+}
+#detail .inhalt .vote{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    background: #ffffff;
+    transform: translateY(-50%);
+    color: #333;
+    padding: 0 20px 10px;
+    border-radius: 100px 0 0 100px;
+    text-align: center;
+}
+#detail .inhalt .vote .star{
+    color: #FCC419;
+    font-size: 3em;
+}
+#detail .inhalt .vote h3{
+    font-weight: 400;
+    font-size: 0.9em;
+}
+#detail .inhalt .vote h3 span{
+    font-weight: 700;
+    font-size: 1.4em;
+}
+#detail .inhalt .vote p{
+    color: #9A9BB2;
+}
+#detail .inhalt a{
+    font-size: 2em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+    max-width: calc(100% - 200px);
+}
+#detail .inhalt a span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    width: 1.2em;
+    height: 1.2em;
+    background: #fff;
+    color: #333;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+#detail .inhalt h1{
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+#detail .inhalt p{
+    font-weight: 300;
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+#detail .inhalt .genre{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+#detail .inhalt .genre h3{
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    font-size: 0.8em;
+    font-weight: 300;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#detail .inhalt h2{
+    margin-bottom: 10px;
+}
+
+/* ********************* media queries ********************* */
+@media screen and (max-width: 768px) { 
+    header{
+        position: relative;
+    }
+    header nav{
+        position: fixed;
+        top: 0;
+        right: -305px;
+        width: 300px;
+        height: 100vh;
+        flex-flow: column;
+        justify-content: center;
+        z-index: 999;
+        background: #9A9BB2;
+        transition: .5s;
+    }
+    header nav form{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 3vh 0;
+    }
+    .movielist{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pagenum.num{
+        display: none;
+    }
+    #detail .inhalt a{
+        font-size: 1.3em;
+    }
+    #detail .inhalt h1{
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 450px) { 
+    .movielist{
+        grid-template-columns: 1fr;
+    }
+    #detail .inhalt a{
+        padding-top: 80px;
+        max-width: unset;
+    }
+}

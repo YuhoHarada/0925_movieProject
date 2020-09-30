@@ -86,7 +86,7 @@ app.get('/favorite/:id', (req, res) => {
                 results.push(result[i])
             }
             let movie = {
-                page: req.params.id,
+                page: Number(req.params.id),
                 total_pages,
                 results
             }

@@ -163,6 +163,7 @@ header form input[type=submit]{
     font-weight: 700;
     margin-bottom: 30px;
     max-width: calc(100% - 200px);
+    cursor: pointer;
 }
 #detail .inhalt a span{
     display: flex;

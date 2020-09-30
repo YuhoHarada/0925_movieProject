@@ -21,9 +21,9 @@
                 <p><%= detail.popularity %> </p>
             </div>
             <% if (favorite) { %>
-                <a href="/delete/<%= deleteid %>"><span>-</span> Remove from favorite</a><br>
+                <a onclick="location.replace('/delete/<%= deleteid %>')"><span>-</span> Remove from favorite</a>
             <% } else { %>
-                <a href="/add/<%= detail.id %>"><span>+</span> Add to favorite</a><br>
+                <a onclick="location.replace('/add/<%= detail.id %>')"><span>+</span> Add to favorite</a>
             <% } %>
             <h1><%= detail.title %></h1>
             <p><%= detail.release_date %> Released</p>
